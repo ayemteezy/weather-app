@@ -1,4 +1,5 @@
 import "@/globals.css";
+import "@fontsource-variable/geist-mono/wght.css";
 
 import { ROUTES } from "@/constants/routes";
 import { initRouter } from "@/router";

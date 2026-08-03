@@ -1,10 +1,10 @@
 import styles from "./layout.module.css";
 
-// import createSidebar from "@/components/sidebar";
+import createSidebar from "@/components/sidebar";
 
 export default function createLayout() {
-  const layoutWrapper = document.createElement("div");
-  layoutWrapper.className = styles.container;
+  const wrapper = document.createElement("div");
+  wrapper.className = styles.wrapper;
 
   const content = document.createElement("div");
   content.className = styles.content;
@@ -14,16 +14,16 @@ export default function createLayout() {
 
   mainContent.textContent = "hello";
 
-  layoutWrapper.renderPage = (pageElement) => {
+  wrapper.renderPage = (pageElement) => {
     if (pageElement) {
       mainContent.innerHTML = "";
       mainContent.append(pageElement);
     }
   };
-  // const sidebar = createSidebar();
+  const sidebar = createSidebar();
 
   content.append(mainContent);
-  layoutWrapper.append(content);
+  wrapper.append(content, sidebar);
 
-  return layoutWrapper;
+  return wrapper;
 }

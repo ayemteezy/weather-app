@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css");
-
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -267,13 +264,14 @@ html {
   --color-bg-surface: var(--neutral-100);
 
   --border: oklch(1 0 0 / 0.1); /* Your original alpha token */
-  --color-border: var(--neutral-200);
+  --color-border: var(--neutral-300);
   --ring: oklch(0.4849 0 0);
 
   /* Typography */
   --color-text-base: var(--neutral-1000);
   --color-text-body: var(--neutral-900);
   --color-text-muted: var(--neutral-400);
+  --color-text-black: var(--neutral-0);
 
   /* Primary Interactive States */
   --color-accent: var(--blue-500);
@@ -340,6 +338,7 @@ html {
 
   /* Families, Weights, Tracking */
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", monospace;
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;

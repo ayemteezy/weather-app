@@ -1,6 +1,8 @@
-.container {
-  height: 100%;
+.wrapper {
   display: flex;
+  font-family: var(--font-mono);
+
+  height: 100%;
 }
 
 .content {
