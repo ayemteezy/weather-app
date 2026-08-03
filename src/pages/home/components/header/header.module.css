@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.date {
+  color: var(--color-text-muted);
+}
+
+.city {
+  font-weight: normal;
+  font-size: var(--text-2xl);
+}

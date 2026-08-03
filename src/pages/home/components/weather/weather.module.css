@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.temperature {
+  font-size: calc(var(--text-4xl) * 3.2);
+  font-weight: var(--weight-normal);
+  line-height: var(--tracking-tight);
+  letter-spacing: var(--leading-none);
+}
+
+.feelsLike {
+  color: var(--neutral-500);
+  font-size: var(--text-xl);
+}
+
+.condition {
+  color: var(--color-text-muted);
+}
+
+.updatedAt {
+  color: var(--neutral-500);
+  font-size: var(--text-sm);
+}

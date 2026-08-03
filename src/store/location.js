@@ -1,0 +1,34 @@
+const DEFAULT_CITIES = ["Manila, PH", "Tokyo, JP", "London, GB"];
+
+export const locationStore = {
+  getLocations() {
+    if (localStorage.getItem("weather_locations") === null) {
+      localStorage.setItem("weather_locations", JSON.stringify(DEFAULT_CITIES));
+    }
+    return JSON.parse(localStorage.getItem("weather_locations")) || [];
+  },
+
+  getActiveLocation() {
+    let active = localStorage.getItem("active_location");
+
+    if (!active) {
+      const locations = this.getLocations();
+      active = locations[0] || "";
+      if (active) localStorage.setItem("active_location", active);
+    }
+
+    return active;
+  },
+
+  setActiveLocation(cityName) {
+    localStorage.setItem("active_location", cityName);
+
+    window.dispatchEvent(
+      new CustomEvent("activeLocationChange", {
+        detail: { location: cityName },
+      }),
+    );
+
+    return cityName;
+  },
+};
