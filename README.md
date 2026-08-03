@@ -172,7 +172,7 @@ npm run build
 
 ## Roadmap
 
-- [ ] Fahrenheit/Celsius toggle
+- [x] Fahrenheit/Celsius toggle
 - [ ] Search by city name
 - [ ] Current conditions display
 - [ ] Multi-day forecast
