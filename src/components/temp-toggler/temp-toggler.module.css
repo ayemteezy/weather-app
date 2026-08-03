@@ -1,0 +1,10 @@
+.header {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-sm);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: var(--spacing-2);
+}

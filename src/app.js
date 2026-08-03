@@ -1,4 +1,5 @@
 import "@/globals.css";
+import "@fontsource-variable/geist-mono/wght.css";
 
 import { ROUTES } from "@/constants/routes";
 import { initRouter } from "@/router";
@@ -21,6 +22,12 @@ export default function App() {
 
   const handleRouteMatch = (path) => {
     const matchingRoute = ROUTES.find((route) => route.href === path);
+
+    if (matchingRoute) {
+      render(matchingRoute.page);
+    } else {
+      render("Error");
+    }
   };
 
   const routerInstance = initRouter(handleRouteMatch);

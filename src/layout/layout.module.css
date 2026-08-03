@@ -1,6 +1,8 @@
-.container {
-  height: 100%;
+.wrapper {
+  position: relative;
   display: flex;
+  font-family: var(--font-mono);
+  height: 100%;
 }
 
 .content {
@@ -11,4 +13,25 @@
 
 .mainContent {
   height: 100%;
+  padding-block: calc(var(--spacing-1) * 16);
+  padding-inline: calc(var(--spacing-1) * 16);
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--color-text-muted);
+  z-index: 10; /* must be higher than sidebar/content's own z-index, if any */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.loading.visible {
+  opacity: 1;
+  pointer-events: auto;
 }

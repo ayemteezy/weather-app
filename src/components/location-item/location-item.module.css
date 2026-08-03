@@ -1,0 +1,11 @@
+.button {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.locationBtn {
+  flex: 1;
+  justify-content: flex-start;
+}
