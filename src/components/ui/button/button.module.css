@@ -1,7 +1,8 @@
 .button {
+  display: flex;
+
   font-size: var(--text-sm);
 
-  padding: var(--spacing-2) var(--spacing-4);
   border: none;
   cursor: pointer;
 
@@ -34,7 +35,7 @@
 }
 
 .md {
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-4);
 }
 
 .lg {
@@ -48,6 +49,6 @@
 }
 
 .icon {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16%;
 }

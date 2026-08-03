@@ -22,6 +22,12 @@ export default function App() {
 
   const handleRouteMatch = (path) => {
     const matchingRoute = ROUTES.find((route) => route.href === path);
+
+    if (matchingRoute) {
+      render(matchingRoute.page);
+    } else {
+      render("Error");
+    }
   };
 
   const routerInstance = initRouter(handleRouteMatch);

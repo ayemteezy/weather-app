@@ -42,7 +42,7 @@ export default function createTempToggler() {
   }
   renderButtons();
 
-  window.addEventListener("unitChange", (e) => {
+  window.addEventListener("unitChange", () => {
     renderButtons();
   });
 

@@ -3,3 +3,10 @@
   margin-bottom: var(--spacing-4);
   font-size: var(--text-sm);
 }
+
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--spacing-2);
+}
