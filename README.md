@@ -175,9 +175,7 @@ npm run build
 - [x] Fahrenheit/Celsius toggle
 - [ ] Search by city name
 - [ ] Current conditions display
-- [ ] Multi-day forecast
 - [ ] Error handling for invalid searches
-- [ ] Geolocation-based "Use my location" button
 - [ ] Hourly forecast view
 
 See the [open issues](https://github.com/ayemteezy/weather-app/issues) for a full list of proposed features (and known issues).
