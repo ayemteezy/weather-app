@@ -2,6 +2,7 @@ import styles from "./sidebar.module.css";
 
 import createTempToggler from "@/components/temp-toggler";
 import createLocation from "@/components/location";
+import createSearch from "@/components/search";
 
 export default function createSidebar() {
   const container = document.createElement("aside");
@@ -12,6 +13,9 @@ export default function createSidebar() {
 
   const locations = createLocation();
   container.append(locations);
+
+  const searchBar = createSearch();
+  container.append(searchBar);
 
   return container;
 }
