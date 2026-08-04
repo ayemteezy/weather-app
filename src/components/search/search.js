@@ -17,15 +17,14 @@ export default function createSearch() {
   const suggestionContainer = document.createElement("div");
   const handleSearch = async () => {
     const query = input.value.trim();
-
     const results = await fetchSuggestions(query);
     suggestionContainer.innerHTML = "";
     if (!results || results.length === 0) return;
 
-    const suggestions = results
+    // Step 1: extract city/state/country info for every result first
+    const parsed = results
       .map(({ address }) => {
         if (!address) return null;
-        console.log(address);
         const city =
           address.city ||
           address.town ||
@@ -39,22 +38,30 @@ export default function createSearch() {
           address.region ||
           address.state_district ||
           "";
-
         const stateOrProvince =
-          rawStateOrProvince && rawStateOrProvince !== city
-            ? rawStateOrProvince
-            : "";
-
+          rawStateOrProvince !== city ? rawStateOrProvince : "";
         const countryCode = address.country_code
           ? address.country_code.toUpperCase()
           : "";
-
         if (!city || !countryCode) return null;
-        return stateOrProvince
-          ? `${city}, ${stateOrProvince}, ${countryCode}`
-          : `${city}, ${countryCode}`;
+        return { city, stateOrProvince, countryCode };
       })
       .filter(Boolean);
+
+    const cityCountryCounts = {};
+    parsed.forEach(({ city, countryCode }) => {
+      const key = `${city}|${countryCode}`;
+      cityCountryCounts[key] = (cityCountryCounts[key] || 0) + 1;
+    });
+
+    const suggestions = parsed.map(({ city, stateOrProvince, countryCode }) => {
+      const key = `${city}|${countryCode}`;
+      const isAmbiguous = cityCountryCounts[key] > 1;
+
+      return isAmbiguous && stateOrProvince
+        ? `${city}, ${stateOrProvince}, ${countryCode}`
+        : `${city}, ${countryCode}`;
+    });
 
     const suggestionBox = createSuggestionBox(suggestions);
     suggestionContainer.append(suggestionBox);
