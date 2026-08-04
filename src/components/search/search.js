@@ -31,8 +31,20 @@ export default function createSearch() {
           address.town ||
           address.village ||
           address.hamlet ||
-          address.municipality;
-        const stateOrProvince = address.state || address.province || "";
+          address.municipality ||
+          address.province;
+        const rawStateOrProvince =
+          address.state ||
+          address.province ||
+          address.region ||
+          address.state_district ||
+          "";
+
+        const stateOrProvince =
+          rawStateOrProvince && rawStateOrProvince !== city
+            ? rawStateOrProvince
+            : "";
+
         const countryCode = address.country_code
           ? address.country_code.toUpperCase()
           : "";

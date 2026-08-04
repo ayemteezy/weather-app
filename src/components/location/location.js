@@ -26,6 +26,9 @@ export default function createLocations() {
         onClick: () => {
           locationStore.setActiveLocation(cityName);
         },
+        onRemove: () => {
+          locationStore.removeLocation(cityName);
+        },
       });
       locationContainer.append(locationItem);
     });
