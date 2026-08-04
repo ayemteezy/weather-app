@@ -47,7 +47,8 @@ export default function createLayout() {
     try {
       wrapper.setLoading(true);
       const cityName = locationStore.getActiveLocation();
-      data = await getWeatherData(cityName);
+      // data = await getWeatherData(cityName);
+      // TODO: Add error page when theres no data
     } catch (error) {
       console.error("Error fetching weather data:", error);
     } finally {

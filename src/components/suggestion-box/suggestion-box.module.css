@@ -1,0 +1,19 @@
+.container {
+  border: 1px solid var(--color-border);
+}
+
+.list {
+  padding-block: var(--spacing-2);
+  list-style: none;
+}
+
+.item {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--text-sm);
+  cursor: pointer;
+
+  transition: var(--animate-normal);
+}
+.item:hover {
+  background-color: var(--neutral-200);
+}

@@ -7,6 +7,7 @@ export default function createLocationItem({
   location,
   isActive = false,
   onClick,
+  onRemove,
 } = {}) {
   const container = document.createElement("div");
 
@@ -27,6 +28,7 @@ export default function createLocationItem({
       label: "",
       icon: "minus",
       variant: "outline",
+      onClick: onRemove,
     });
     removeBtn.classList.add(styles.removeBtn);
     button.append(removeBtn);
