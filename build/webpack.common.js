@@ -20,7 +20,9 @@ export default {
       extensions: ["js"],
       context: path.resolve(import.meta.dirname, "../src"),
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
   resolve: {
     extensions: [".js", ".json", ".ts", ".tsx", ".wasm"],
