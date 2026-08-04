@@ -5,7 +5,7 @@ import { mockWeatherData } from "@/mock/data";
 import createErrorPage from "@/pages/error/page";
 import createSidebar from "@/components/sidebar";
 
-const USE_MOCK_DATA = true;
+const USE_MOCK_DATA = false;
 
 export default function createLayout() {
   let data = null;
