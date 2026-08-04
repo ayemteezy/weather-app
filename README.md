@@ -41,7 +41,7 @@
     <a href="https://github.com/ayemteezy/weather-app"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ayemteezy/weather-app">View Demo</a>
+    <a href="https://teezy-weatherapp.netlify.app/">View Demo</a>
     &middot;
     <a href="https://github.com/ayemteezy/weather-app/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
     &middot;
@@ -79,7 +79,7 @@
 
 ## About The Project
 
-[![Weather App Screen Shot][product-screenshot]](https://example.com)
+[![Weather App Screen Shot][product-screenshot]](https://teezy-weatherapp.netlify.app/)
 
 This project is part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)'s JavaScript course. The goal was to build a weather app that fetches real-time data from a third-party API and renders it dynamically, using the **module pattern** to separate API calls, data parsing, and DOM rendering, and **Webpack** to bundle everything (including a hidden API key via environment variables).
 
