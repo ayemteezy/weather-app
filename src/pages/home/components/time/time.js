@@ -21,9 +21,11 @@ export default function createTime(data) {
   );
 
   const sunrise = document.createElement("p");
-  sunrise.innerHTML = `<i data-lucide="sunrise"></i> ${sunriseTime}`;
+  sunrise.className = styles.time;
+  sunrise.innerHTML = `<i data-lucide="sunrise" class=" ${styles.icon}"></i> ${sunriseTime}`;
   const sunset = document.createElement("p");
-  sunset.innerHTML = `<i data-lucide="sunset"></i> ${sunsetTime}`;
+  sunset.className = styles.time;
+  sunset.innerHTML = `<i data-lucide="sunset" class=" ${styles.icon}"></i> ${sunsetTime}`;
   createIcons({
     icons: {
       Sunrise,

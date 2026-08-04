@@ -2,13 +2,13 @@ import styles from "./page.module.css";
 
 import createHeader from "./components/header";
 import createWeather from "./components/weather";
-import createTime from "./components/time/time";
+import createTime from "./components/time";
+import createHours from "./components/hours";
 
 export default function createHomePage(data) {
   const container = document.createElement("div");
   container.className = styles.container;
   if (!data) return;
-  console.log(data);
 
   const header = createHeader(data);
   container.append(header);
@@ -22,6 +22,9 @@ export default function createHomePage(data) {
 
   const time = createTime(data);
   container.append(time);
+
+  const cards = createHours(data);
+  container.append(cards);
 
   return container;
 }
