@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/ayemteezy/weather-app">
-    <img src="assets/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Odin Weather App</h3>
@@ -79,7 +79,7 @@
 
 ## About The Project
 
-[![Tic Tac Toe Screen Shot][product-screenshot]](https://example.com)
+[![Weather App Screen Shot][product-screenshot]](https://example.com)
 
 This project is part of [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-weather-app)'s JavaScript course. The goal was to build a weather app that fetches real-time data from a third-party API and renders it dynamically, using the **module pattern** to separate API calls, data parsing, and DOM rendering, and **Webpack** to bundle everything (including a hidden API key via environment variables).
 
@@ -173,10 +173,10 @@ npm run build
 ## Roadmap
 
 - [x] Fahrenheit/Celsius toggle
-- [ ] Search by city name
-- [ ] Current conditions display
-- [ ] Error handling for invalid searches
-- [ ] Hourly forecast view
+- [x] Search by city name
+- [x] Current conditions display
+- [x] Error handling for invalid searches
+- [x] Hourly forecast view
 
 See the [open issues](https://github.com/ayemteezy/weather-app/issues) for a full list of proposed features (and known issues).
 
@@ -251,7 +251,7 @@ Project Link: [https://github.com/ayemteezy/weather-app](https://github.com/ayem
 [license-url]: https://github.com/ayemteezy/weather-app/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/laurence-lester-cari%C3%B1o/
-[product-screenshot]: assets/images/screenshot.png
+[product-screenshot]: src/assets/images/screenshot.png
 
 <!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
 
