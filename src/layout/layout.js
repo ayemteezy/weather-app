@@ -1,10 +1,15 @@
 import styles from "./layout.module.css";
-import createSidebar from "@/components/sidebar";
 import { locationStore } from "@/store/location";
 import { getWeatherData } from "@/api/weather";
+import { mockWeatherData } from "@/mock/data";
+import createErrorPage from "@/pages/error/page";
+import createSidebar from "@/components/sidebar";
+
+const USE_MOCK_DATA = true;
 
 export default function createLayout() {
   let data = null;
+  let errorStatus = null;
   let currentPageFactory = null;
 
   const wrapper = document.createElement("div");
@@ -21,6 +26,11 @@ export default function createLayout() {
   loading.textContent = "Loading Weather Data...";
 
   const renderCurrentPage = () => {
+    if (errorStatus) {
+      mainContent.innerHTML = "";
+      mainContent.append(createErrorPage({ status: errorStatus }));
+      return;
+    }
     if (typeof currentPageFactory === "function") {
       const pageElement = currentPageFactory(data);
       if (pageElement) {
@@ -46,11 +56,24 @@ export default function createLayout() {
   const loadPage = async () => {
     try {
       wrapper.setLoading(true);
-      const cityName = locationStore.getActiveLocation();
-      // data = await getWeatherData(cityName);
-      // TODO: Add error page when theres no data
+
+      if (USE_MOCK_DATA) {
+        data = mockWeatherData;
+        errorStatus = null;
+      } else {
+        const cityName = locationStore.getActiveLocation();
+        const result = await getWeatherData(cityName);
+        if (result.error) {
+          data = null;
+          errorStatus = result.status;
+        } else {
+          data = result.data;
+          errorStatus = null;
+        }
+      }
     } catch (error) {
       console.error("Error fetching weather data:", error);
+      errorStatus = 500;
     } finally {
       wrapper.setLoading(false);
       renderCurrentPage();
@@ -58,7 +81,6 @@ export default function createLayout() {
   };
 
   loadPage();
-
   window.addEventListener("activeLocationChange", loadPage);
   window.addEventListener("unitChange", loadPage);
 

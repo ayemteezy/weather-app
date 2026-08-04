@@ -17,12 +17,28 @@ export const getWeatherData = async (cityName) => {
     const url = `${baseUrl}${encodeURIComponent(cityName.trim())}/yesterday/today?${queryParams.toString()}`;
     const response = await fetch(url);
     if (!response.ok) {
-      console.error(`Visual Crossing API error (${response.status})`);
-      return null;
+      return { error: true, status: response.status };
     }
-    return await response.json();
+    const data = await response.json();
+    return { error: false, data };
   } catch (error) {
-    console.error("Failed to fetch weather data:", error);
-    return null;
+    console.error(error);
+    return { error: true, status: 503 };
   }
+};
+
+export const getHourlySnapshot = (dayData) => {
+  const targetTimes = {
+    morning: "06:00:00",
+    noon: "12:00:00",
+    evening: "18:00:00",
+    night: "00:00:00",
+  };
+
+  const snapshot = {};
+  for (const [label, time] of Object.entries(targetTimes)) {
+    const hourEntry = dayData.hours.find((hour) => hour.datetime === time);
+    snapshot[label] = hourEntry || null;
+  }
+  return snapshot;
 };

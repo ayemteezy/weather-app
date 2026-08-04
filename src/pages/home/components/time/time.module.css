@@ -1,3 +1,14 @@
 .container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.time {
+  color: var(--color-text-muted);
 }
