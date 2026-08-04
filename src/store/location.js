@@ -31,4 +31,23 @@ export const locationStore = {
 
     return cityName;
   },
+
+  addLocation(cityName) {
+    const locations = this.getLocations();
+
+    if (locations.includes(cityName)) {
+      return locations;
+    }
+
+    const updated = [...locations, cityName];
+    localStorage.setItem("weather_locations", JSON.stringify(updated));
+
+    window.dispatchEvent(
+      new CustomEvent("locationsChange", {
+        detail: { locations: updated },
+      }),
+    );
+
+    return updated;
+  },
 };

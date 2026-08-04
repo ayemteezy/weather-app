@@ -33,6 +33,7 @@ export default function createLocations() {
   container.append(locationContainer);
   renderLocations();
   window.addEventListener("activeLocationChange", renderLocations);
+  window.addEventListener("locationsChange", renderLocations);
 
   return container;
 }
