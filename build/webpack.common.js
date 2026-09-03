@@ -67,7 +67,7 @@ export default {
       {
         test: /\.svg$/i,
         type: "asset/resource",
-        generator: { filename: "assets/icons/[name].[hash][ext]" },
+        generator: { filename: "assets/icons/[name].[ext]" },
       },
       {
         test: /\.gif$/i,
@@ -88,7 +88,7 @@ export default {
             options: {
               adapter: sharpAdapter,
               format: "webp",
-              name: "assets/images/[name].[hash].[ext]",
+              name: "assets/images/[name].[ext]",
               esModule: false,
             },
           },
